@@ -1,6 +1,19 @@
 <h1>Users#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>%
+<p>Find me in app/views/users/index.html.erb</p>
 
-<% @users.each do |i| %>
-<%= Hi! i.First_name %>
-<%  end %>
+<%=@name%>
+
+
+<% if !@signed_in_user.blank? %>
+	<h1>Signed In User: <%= @signed_in_user.email %></h1>
+	<p><%= link_to "Sign Out", user_sign_out_path, method: :delete %></p>
+	<p><%= link_to "Edit Account Info",edit_user_path(@signed_in_user.id) %></p>
+<%else%>
+	<p><%= link_to "Sign In", user_sign_in_path %></p>
+	<p><%= link_to "Create Account", user_new_path %></p>
+<% end %>
+
+
+<% @users.each do |u| %>
+<%= u.First_name %>
+<%end%>

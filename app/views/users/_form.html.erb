@@ -1,0 +1,40 @@
+<%= form_for @user do |f|%>
+	<%= f.label :First_name %>
+	<%= f.text_field :First_name %>
+	<br>
+
+	<%= f.label :Surname %>
+	<%= f.text_field :Surname %>
+
+	<br>
+	<%= f.label :email %>
+	<%= f.email_field :email %>
+    
+    <br>
+    <%= f.label :Mobile %>
+	<%= f.number_field :Mobile %>
+
+	
+ 	<br>
+	<%= f.label :College %>
+	<%= f.text_field :College %>
+
+	<br>
+	<%= f.label :Year %>
+	<%= f.number_field :Year %>
+
+	<br>
+	<%= f.label :Dob %>
+	<%= f.date_field :dob %>
+
+	<br>
+	<%= f.label :password %>
+	<%= f.password_field :password %>
+
+
+
+	<br>
+
+	<%= f.submit  :submit%>
+
+<% end %>
